@@ -1,0 +1,28 @@
+server:
+  port: 8585
+
+
+spring:
+  config:
+    import: optional:configserver:http://localhost:8085
+  datasource:
+    url: jdbc:mysql://localhost:3306/sample
+    username: root
+    password: Trigger@1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+
+
+  profile:
+    active: prod
+
+  application:
+    name: user-service
+
+
